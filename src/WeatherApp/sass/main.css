@@ -1,0 +1,257 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Work+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+.wrapper {
+  background: #0096c7;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-animation: wrapper 5s linear infinite;
+          animation: wrapper 5s linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .inputField {
+  margin-top: -5em;
+}
+
+.wrapper .inputField input {
+  border: none;
+  padding: 6px 12px;
+  outline: none;
+  border-radius: 5px 0px 0px 6px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  font-family: "Work Sans", sans-serif;
+  width: 30vw;
+}
+
+.wrapper .inputField input:focus,
+.wrapper .inputField input:active {
+  color: #2894b8;
+}
+
+.wrapper .inputField button {
+  padding: 6px 12px;
+  border: none;
+  font-weight: bold;
+  color: #0096c7;
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+}
+
+.wrapper .inputField button:active {
+  background: #000;
+}
+
+.wrapper .Card_box {
+  margin-top: 2em;
+  width: 70vw;
+  background: #086c8d;
+}
+
+.wrapper .Card_box .icon {
+  text-align: center;
+  padding: 2em 0;
+  background: #fffcf2;
+}
+
+.wrapper .Card_box .icon i {
+  font-size: 4rem;
+  color: #2894b8;
+  -webkit-animation: icon 2s linear infinite alternate;
+          animation: icon 2s linear infinite alternate;
+}
+
+.wrapper .Card_box .card_main_box {
+  padding: 1rem 0.5rem;
+}
+
+.wrapper .Card_box .card_main_box .deg_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 2rem 0;
+  color: #fffcf2;
+  font-size: 1.5rem;
+}
+
+.wrapper .Card_box .card_main_box .deg_date .deg {
+  font-size: 2rem;
+  padding: 0 2em;
+}
+
+.wrapper .Card_box .card_main_box .deg_date .time {
+  margin-left: 3rem;
+}
+
+.wrapper .Card_box .card_main_box .weather_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.wrapper .Card_box .card_main_box .weather_details .weather_min {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.wrapper .Card_box .card_main_box .weather_details .weather_min p {
+  text-align: center;
+  margin-left: 0.3rem;
+  color: #fffcf2;
+}
+
+@-webkit-keyframes wrapper {
+  0% {
+    background: #0096c7;
+  }
+  50% {
+    background: #2894b8;
+  }
+  75% {
+    background: #086c8d;
+  }
+  100% {
+    background: #0096c7;
+  }
+}
+
+@keyframes wrapper {
+  0% {
+    background: #0096c7;
+  }
+  50% {
+    background: #2894b8;
+  }
+  75% {
+    background: #086c8d;
+  }
+  100% {
+    background: #0096c7;
+  }
+}
+
+@-webkit-keyframes icon {
+  from {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: 2s linear;
+    transition: 2s linear;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: 2s linear;
+    transition: 2s linear;
+  }
+}
+
+@keyframes icon {
+  from {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: 2s linear;
+    transition: 2s linear;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: 2s linear;
+    transition: 2s linear;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper .inputField {
+    margin-top: -5em;
+  }
+  .wrapper .inputField input {
+    width: 50vw;
+  }
+  .wrapper .Card_box {
+    width: 100vw;
+  }
+  .wrapper .Card_box .deg_date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    font-size: 1.3rem !important;
+  }
+  .wrapper .Card_box .deg_date .country_name {
+    margin-left: -2rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  .wrapper .Card_box .deg_date .deg {
+    margin-left: -3rem;
+  }
+  .wrapper .Card_box .deg_date .time {
+    margin: 0 !important;
+    font-size: 1em;
+  }
+}
+/*# sourceMappingURL=main.css.map */

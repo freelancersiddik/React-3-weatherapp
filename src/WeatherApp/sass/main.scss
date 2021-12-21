@@ -1,0 +1,166 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Work+Sans&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$primary_font: "Nunito", sans-serif;
+$scoundry_font: "Work Sans", sans-serif;
+
+$bg_color: #0096c7;
+$animation: #2894b8;
+$animation2: #086c8d;
+$color: #fffcf2;
+$extra: #ff9e00;
+
+@mixin flexing($jc, $ai, $fd) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+html {
+    font-family: $primary_font;
+}
+.wrapper {
+    background: $bg_color;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    animation: wrapper 5s linear infinite;
+    @include flexing(center, center, column);
+
+    // inputfield
+    .inputField {
+        margin-top: -5em;
+        input {
+            border: none;
+            padding: 6px 12px;
+            outline: none;
+            border-radius: 5px 0px 0px 6px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            font-family: $scoundry_font;
+            width: 30vw;
+        }
+        input:focus,
+        input:active {
+            color: $animation;
+        }
+        button {
+            padding: 6px 12px;
+            border: none;
+            font-weight: bold;
+            color: $bg_color;
+            border-radius: 0px 5px 5px 0px;
+            cursor: pointer;
+        }
+        button:active {
+            background: #000;
+        }
+    }
+
+    // card box
+    .Card_box {
+        margin-top: 2em;
+        width: 70vw;
+        background: $animation2;
+        .icon {
+            text-align: center;
+            padding: 2em 0;
+            background: $color;
+            i {
+                font-size: 4rem;
+                color: $animation;
+                animation: icon 2s linear infinite alternate;
+            }
+        }
+
+        .card_main_box {
+            padding: 1rem 0.5rem;
+            .deg_date {
+                @include flexing(space-between, center, row);
+                padding: 2rem 0;
+                color: $color;
+                font-size: 1.5rem;
+                .deg {
+                    font-size: 2rem;
+                    padding: 0 2em;
+                }
+                .time {
+                    // font-size: 2rem;
+                    margin-left: 3rem;
+                }
+            }
+            .weather_details {
+                @include flexing(space-between, center, row);
+                .weather_min {
+                    @include flexing(center, center, row);
+
+                    p {
+                        text-align: center;
+                        margin-left: 0.3rem;
+                        color: $color;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes wrapper {
+    0% {
+        background: $bg_color;
+    }
+    50% {
+        background: $animation;
+    }
+    75% {
+        background: $animation2;
+    }
+    100% {
+        background: $bg_color;
+    }
+}
+@keyframes icon {
+    from {
+        transform: scale(1.1);
+        transition: 2s linear;
+    }
+    to {
+        transform: scale(1);
+        transition: 2s linear;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        .inputField {
+            margin-top: -5em;
+            input {
+                width: 50vw;
+            }
+        }
+        .Card_box {
+            width: 100vw;
+            .deg_date {
+                @include flexing(space-around, center, row);
+                width: 100%;
+                font-size: 1.3rem !important;
+                .country_name {
+                    margin-left: -2rem ;
+                    margin-right: 1rem;
+                    font-size: 1rem;
+                }
+                .deg {
+                    margin-left: -3rem;
+                }
+                .time {
+                    margin: 0 !important;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
